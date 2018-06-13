@@ -16,7 +16,7 @@ mongoose.connect(config.MONGO, (err, data) => {
     }
 })
 
-
+app.set('secretKey', config.secret)
 app.use('/user', routes)
 
 

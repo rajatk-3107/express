@@ -20,7 +20,8 @@ var person = new Schema({
         type: Date,
         default: new Date(),
         required: true
-    }
+    },
+    createdBy: String
 
 })
 

@@ -1,4 +1,5 @@
 {
     "PORT": 4000,
-    "MONGO": "mongodb://rajat:qwerty12345@ds255740.mlab.com:55740/person"
+    "MONGO": "mongodb://rajat:qwerty12345@ds255740.mlab.com:55740/person",
+    "secret": "T3ST1NG"
 }

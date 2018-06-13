@@ -19,7 +19,8 @@ exports.addPerson = (req, res) => {
                 state: req.body.state,
                 pincode: req.body.pincode
             },
-            phone: req.body.phone
+            phone: req.body.phone,
+            createdBy: req.decoded.email
         }).save((err, data) => {
             if (err) {
                 res.json({
