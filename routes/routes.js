@@ -14,5 +14,14 @@ router.post('/login', login.login)
 var getPerson = require('./getPerson')
 router.get('/getPersons', tokenVerify.tokenVerify, getPerson.getPerson)
 
+router.use((err, req, res, next) => {
+    if (err) {
+        res.json({
+            success: false,
+            msg: "Something went wrong"
+        })
+    }
+})
+
 
 module.exports = router

@@ -1,7 +1,7 @@
 var dbPerson = require('../models/person')
 
 
-exports.addPerson = (req, res) => {
+exports.addPerson = (req, res, next) => {
     if (!req.body.name || !req.body.email) {
         res.json({
             success: false,
@@ -23,10 +23,7 @@ exports.addPerson = (req, res) => {
             createdBy: req.decoded.email
         }).save((err, data) => {
             if (err) {
-                res.json({
-                    success: false,
-                    msg: "Error in database. Please try again"
-                })
+                next(err)
             } else {
                 res.json({
                     success: true,
