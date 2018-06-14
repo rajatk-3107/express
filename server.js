@@ -19,6 +19,10 @@ mongoose.connect(config.MONGO, (err, data) => {
 app.set('secretKey', config.secret)
 app.use('/user', routes)
 
+app.use(express.static(__dirname + '/dist'))
+app.use(function(req, res) {
+    res.sendFile(__dirname + '/dist/index.html')
+})
 
 
 app.listen(port, err => {
